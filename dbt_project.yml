@@ -43,4 +43,7 @@ models:
       +schema: raw_to_src
     fact:
       +materialized: table
+
+vars:
+  user_name: "YOUR_USERNAME"
     

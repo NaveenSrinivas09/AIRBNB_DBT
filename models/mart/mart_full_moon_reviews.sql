@@ -3,7 +3,7 @@
 ) }}
 
 WITH fct_reviews AS (
-    SELECT * FROM {{ ref("fact_reviews") }}
+    SELECT * FROM {{ ref('fact_reviews') }}
 ),
 full_moon_dates AS (
     SELECT * FROM {{ ref('seed_full_moon_dates') }}
@@ -16,6 +16,8 @@ SELECT
     ELSE 'full moon'
   END AS is_full_moon
 FROM
-  fct_reviews r
-  LEFT JOIN full_moon_dates fm
+  fct_reviews
+  r
+  LEFT JOIN full_moon_dates
+  fm
   ON (TO_DATE(r.review_date) = DATEADD(DAY, 1, fm.full_moon_date))
