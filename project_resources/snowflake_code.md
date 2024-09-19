@@ -4,7 +4,8 @@ Copy these SQL statements into a Snowflake Worksheet, select all and execute the
 
 If you see a Grant partially executed: privileges [REFERENCE_USAGE] not granted. message when you execute GRANT ALL ON DATABASE AIRBNB to ROLE transform, that's just an info message and you can ignore it.
 
-`-- Use an admin role
+```
+-- Use an admin role
 USE ROLE ACCOUNTADMIN;
 
 -- Create the `transform` role
@@ -94,4 +95,5 @@ CREATE OR REPLACE TABLE raw_hosts
 COPY INTO raw_hosts (id, name, is_superhost, created_at, updated_at)
                    from 's3://dbtlearn/hosts.csv'
                     FILE_FORMAT = (type = 'CSV' skip_header = 1
-                    FIELD_OPTIONALLY_ENCLOSED_BY = '"');`
+                    FIELD_OPTIONALLY_ENCLOSED_BY = '"');
+```
