@@ -1,7 +1,8 @@
 {{
-  config(
-    materialized = 'incremental',
-    on_schema_change='fail'
+    config(
+        materialized = 'incremental',
+        incremental_strategy = 'append',
+        pre_hook= ["{{truncate_table_if_exists()}}"]
     )
 }}
 
