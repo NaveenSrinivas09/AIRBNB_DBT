@@ -1,8 +1,8 @@
-"Snowflake user creation"
+##Snowflake user creation##
 
-Copy these SQL statements into a Snowflake Worksheet, select all and execute them (i.e. pressing the play button).
+####Copy these SQL statements into a Snowflake Worksheet, select all and execute them (i.e. pressing the play button).
 
-If you see a Grant partially executed: privileges [REFERENCE_USAGE] not granted. message when you execute GRANT ALL ON DATABASE AIRBNB to ROLE transform, that's just an info message and you can ignore it.
+If you see a Grant partially executed: privileges [REFERENCE_USAGE] not granted. message when you execute GRANT ALL ON DATABASE AIRBNB to ROLE transform, that's just an info message and you can ignore it.####
 
 ```
 -- Use an admin role
