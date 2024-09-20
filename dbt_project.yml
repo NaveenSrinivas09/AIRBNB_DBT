@@ -33,6 +33,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   my_new_project:
-    # Applies to all files under models/example/
-    example:
-      materialized: view
+    +materialized: view
+    # +post-hook:
+    #   - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
+    dim:
+      +materialized: table
+    src:
+      +materialized: table
+      +schema: raw_to_src
+    fact:
+      +materialized: table
+
+vars:
+  user_name: "YOUR_USERNAME"
+    
